@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <style>
+            body {
+                font-family: Helvetica Neue, Lucida Grande, Arial; 
+            }
+            nav {
+                padding: 5px;
+                margin: 0px;
+                overflow: hidden;
+                top: 0;
+                width: 100%;
+                z-index: 2;
+             
+            }
+            h1 {
+                text-align: center;
+            }    
+            li {
+                margin: 5px;
+                list-style-type: none;
+                display: inline-block;
+                }
+        </style>
+    </head>
+<body>
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href='/blog'>Main Blog Page</a></li>
+                <li><a href='/newpost'>Add a Blog Entry</a></li>
+            </ul>
+        </nav>
+    </div>
+    {% block content %}{% endblock %}
+</body>
+</html>
+
