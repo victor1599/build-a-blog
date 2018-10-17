@@ -10,12 +10,16 @@ db = SQLAlchemy(app)
 class Blog(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)     
-    title = db.Column(db.Text)  
-    post = db.Column(db.Text)   
+    title = db.Column(db.String(180))  
+    post = db.Column(db.String(1000))   
 
     def __init__(self, title, post):
         self.title = title
         self.post = post
+
+@app.route("/")
+def index():
+    return redirect("/blog")
 
 @app.route('/blog')
 def show_blog():
